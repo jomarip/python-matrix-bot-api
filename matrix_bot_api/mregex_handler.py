@@ -14,7 +14,8 @@ class MRegexHandler(MHandler):
     def __init__(self, regex_str, handle_callback):
         MHandler.__init__(self, self.test_regex, handle_callback)
         self.regex_str = regex_str
-
+        self.letters = regex_str
+		
     def test_regex(self, room, event):
         # Test the message and see if it matches the regex
         if event['type'] == "m.room.message":
